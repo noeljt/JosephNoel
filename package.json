@@ -1,0 +1,19 @@
+{
+  "name": "josephnoel",
+  "version": "1.0.0",
+  "description": "Personal website for Joseph Thompson Noel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noeljt/JosephNoel.git"
+  },
+  "author": "noeljt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noeljt/JosephNoel/issues"
+  },
+  "homepage": "https://github.com/noeljt/JosephNoel#readme"
+}
