@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/noeljt/JosephNoel/issues"
   },
-  "homepage": "https://github.com/noeljt/JosephNoel#readme"
+  "homepage": "https://github.com/noeljt/JosephNoel#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
 }
