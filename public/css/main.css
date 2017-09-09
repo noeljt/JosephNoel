@@ -2422,7 +2422,7 @@ input[type="radio"] + label:before {
 	}
 
 		.icon.major:before {
-			font-size: 2.25em;
+			font-size: 3em;
 		}
 
 		.icon.major.alt {
@@ -4008,4 +4008,8 @@ body.is-touch #banner {
 .white-link {
 	border: none;
 	color: white;
+}
+
+i::before {
+	font-family: inherit !important;
 }
