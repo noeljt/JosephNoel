@@ -3020,15 +3020,15 @@ input[type="button"],
 	}
 
 	.spotlight.style1 .content {
-		border-color: #e44c65;
+		border-color: #e2231b;
 	}
 
 	.spotlight.style2 .content {
-		border-color: #5480f1;
+		border-color: #FFA500;
 	}
 
 	.spotlight.style3 .content {
-		border-color: #39c088;
+		border-color: #0078c9;
 	}
 
 	.spotlight.inactive .content {
