@@ -2405,8 +2405,7 @@ input[type="radio"] + label:before {
 		}
 
 		.icon.alt:before {
-			color: #1c1d26 !important;
-			text-shadow: 1px 0 0 #ffffff, -1px 0 0 #ffffff, 0 1px 0 #ffffff, 0 -1px 0 #ffffff;
+			text-shadow: 1px 0 0 rgba(255, 255, 255, 0.75), -1px 0 0 rgba(255, 255, 255, 0.75), 0 1px 0 rgba(255, 255, 255, 0.75), 0 -1px 0 rgba(255, 255, 255, 0.75);
 		}
 
 	.icon.major {
@@ -2545,8 +2544,6 @@ ul {
 
 		ul.icons li {
 			display: inline-block;
-			height: 2.5em;
-			line-height: 2.5em;
 			padding: 0 0.5em;
 		}
 
@@ -3006,7 +3003,6 @@ input[type="button"],
 		height: 101%;
 		padding: 6em 3em;
 		top: 0;
-		width: 28em;
 	}
 
 	.spotlight.left .content {
@@ -3414,7 +3410,7 @@ body.is-touch #banner {
 
 #footer {
 	background: #272833;
-	padding: 6em 0;
+	padding: 2em 0;
 	text-align: center;
 }
 
@@ -3521,7 +3517,7 @@ body.is-touch #banner {
 	/* Footer */
 
 		#footer {
-			padding: 4.5em 0;
+			padding: 2em 0;
 		}
 
 }
@@ -3602,7 +3598,7 @@ body.is-touch #banner {
 	/* Footer */
 
 		#footer {
-			padding: 4.5em 0;
+			padding: 2em 0;
 		}
 
 }
@@ -3901,7 +3897,7 @@ body.is-touch #banner {
 	/* Footer */
 
 		#footer {
-			padding: 3.25em 1.5em;
+			padding: 2em 1.5em;
 		}
 
 }
@@ -3984,7 +3980,7 @@ body.is-touch #banner {
 	/* Footer */
 
 		#footer {
-			padding: 3em 1.25em;
+			padding: 2em 1.25em;
 		}
 
 			#footer .copyright {
@@ -4012,4 +4008,14 @@ body.is-touch #banner {
 
 i::before {
 	font-family: inherit !important;
+}
+
+#skill_next {
+	bottom: inherit;
+	height: inherit;
+}
+
+#headshot {
+	border-radius: 50%;
+	margin-bottom: 24px;
 }

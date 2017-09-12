@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>Tweet n Load</title>
+    <!-- Angular Material -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <!-- Socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+    <!-- socket.io code -->
+    <script src="script.js"></script>  
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body ng-app="lab10">
+    <div id="inputContainer" ng-controller="MainController" md-theme="twitter">
+      <!-- Site Toolbar -->
+      <md-toolbar id="header">
+        <div class="md-toolbar-tools">
+          <h2 flex md-truncate>Tweet n Load</h2>
+          <md-menu>
+            <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="More">
+              <i class="material-icons">more_vert</i>
+            </md-button>
+              <md-menu-content>
+                <md-menu-item><md-button md-menu-origin md-menu-align-target ng-click="showLanding()">Home</md-button></md-menu-item>
+                <md-menu-item><md-button md-menu-origin md-menu-align-target ng-click="showLoad()">Load</md-button></md-menu-item>
+                <md-menu-item><md-button md-menu-origin md-menu-align-target ng-click="showDisplay()">Display</md-button></md-menu-item>
+                <md-menu-item><md-button md-menu-origin md-menu-align-target ng-click="showVisual()">Visualize</md-button></md-menu-item>
+                <md-menu-item><md-button md-menu-origin md-menu-align-target ng-click="showExport()">Export</md-button></md-menu-item>
+                <md-menu-item><md-button md-menu-origin md-menu-align-target ng-click="showReset()">Reset</md-button></md-menu-item>
+             </md-menu-content>
+          </md-menu>
+        </div>
+      </md-toolbar>
+      <!-- End Site Toolbar -->
+      <!-- Landing -->
+      <div id="landingWrapper">
+        <img id="largeLogo" src="resources/logo.svg" class="md-card-image">
+        <md-card id="landingCard">
+          <md-card-content>
+            <p class="centeredText">
+              Ever wanted to load tweets based on a single simple keyword? Well look no further! Here at Tweet n Load we can pull tweets straight from Twitter's API based on a given keyword. Exciting! Now the real question, how many of those tweets will you get? We got you covered! Just enter in how many tweets you want, or else nothing will happen in the first place! AMAZING!!!
+            </p>
+          </md-card-content>
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button id="landingButton" class="md-raised md-primary" ng-click="showLoad()">Get Started</md-button>
+          </md-card-actions>
+        </md-card>
+      </div>
+      <!-- End Landing -->
+      <!-- Cards -->
+      <md-content id="top">
+        <!-- Load Card -->
+        <md-card style="display:none;" id="loadCard" md-theme="twitter">
+          <md-toolbar>
+            <div class="md-toolbar-tools">
+            <h2><span>Load Data</span></h2>
+            <span flex></span>
+            </div>
+          </md-toolbar>
+          <md-card-content id="primaryContent">
+            <form name="tweetForm" ng-submit="load()">
+              <md-input-container class="md-block">
+                <label>Keyword</label>
+                <input name="keyword" ng-model="keyword">
+              </md-input-container>
+              <md-input-container class="md-block"/>
+                <label>Amount</label>
+                <input required name="amount" ng-model="amount">
+              </md-input-container>
+                <md-button id="load" type="submit" class="md-raised md-primary">Load</md-button>
+            </form>
+            <div class="status"></div>
+          </md-card-content>
+        </md-card>
+        <!-- End Load Card -->
+        <!-- Display Card -->
+        <md-card style="display:none;" id="displayCard" md-theme="twitter">
+          <md-toolbar>
+            <div class="md-toolbar-tools">
+            <h2><span>Display Data</span></h2>
+            </div>
+          </md-toolbar>
+          <md-card-content id="primaryContent">
+            <form name="displayForm" ng-submit="display()">
+              <md-button type="submit" class="refresh md-raised md-primary">Refresh</md-button>
+            </form>
+            <div class="status"></div>
+          </md-card-content>
+        </md-card>
+        <!-- End Display Card -->
+        <!-- Visual Card -->
+        <md-card style="display:none;" id="visualCard" md-theme="twitter">
+          <md-toolbar>
+            <div class="md-toolbar-tools">
+            <h2><span>Visualize Data</span></h2>
+            </div>
+          </md-toolbar>
+          <md-card-content id="primaryContent">
+            <canvas id="chart1" width="400" height="400"></canvas>
+            <canvas id="chart2" width="400" height="400"></canvas>
+            <canvas id="chart3" width="400" height="400"></canvas>
+            <form name="visualForm" ng-submit="visualize()">
+              <md-button type="submit" class="refresh md-raised md-primary">Refresh</md-button>
+            </form>
+            <div class="status"></div>
+          </md-card-content>
+        </md-card>
+        <!-- End Visual Card -->
+        <!-- Export Card -->
+        <md-card style="display:none;" id="exportCard" md-theme="twitter">
+          <md-toolbar>
+            <div class="md-toolbar-tools">
+            <h2><span>Export Data</span></h2>
+            <span flex></span>
+            </div>
+          </md-toolbar>
+          <md-card-content id="primaryContent">
+            <form name="exportForm" ng-submit="export()">
+              <md-input-container class="md-block">
+                <label>Format</label>
+                <md-select ng-model="format">
+                  <md-option ng-value="fmt" ng-repeat="fmt in formats">{{ fmt }}</md-option>
+                </md-select>
+              </md-input-container>
+              <md-button id="export" type="submit" class="md-raised md-primary">Export</md-button>
+            </form>
+            <div class="status"></div>
+          </md-card-content>
+        </md-card>
+        <!-- End Export Card -->
+        <!-- Reset Card -->
+        <md-card style="display:none;" id="resetCard" md-theme="twitter">
+          <md-toolbar>
+            <div class="md-toolbar-tools">
+            <h2><span>Reset Data</span></h2>
+            </div>
+          </md-toolbar>
+          <md-card-content id="primaryContent">
+            <form name="resetForm" ng-submit="reset()">
+              <label>This will reset the Mongo Database (remove all stored tweets)</label>
+              <md-button type="submit" class="refresh md-raised md-primary">Reset</md-button>
+            </form>
+            <div class="status"></div>
+          </md-card-content>
+        </md-card>
+        <!-- End Reset Card -->
+      </md-content>
+      <!-- End Cards -->
+      <div id="tweets" layout-margin layout="row" layout-xs="column" layout-wrap layout-align="center stretch"></div>
+    </div>
+  </body>
+
+</html>

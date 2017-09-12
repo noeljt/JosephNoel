@@ -1,0 +1,61 @@
+html {
+    background-color: rgba(29, 161, 242, 0.1);
+}
+
+#largeLogo {
+    padding: 20px 0;
+    margin: auto;
+    display: block;
+    height: 200px;
+}
+
+.centeredText {
+    text-align: center;
+}
+
+#top, body {
+    background-color: transparent;
+}
+
+#top, #landingCard {
+    width: 70%;
+    margin: auto;
+}
+
+#load, #display, #export, #reset, .refresh, #landingButton {
+    margin: auto;
+    display: block;
+}
+
+#reset, .refresh {
+    margin-top: 15px;
+}
+
+.card-media {
+    border-radius: 50%;
+    height: auto !important;
+    width: 100% !important;
+    margin-left: 10px;
+}
+
+.status {
+    text-align: center;
+    margin-top: 10px;
+}
+
+label {
+    text-align: center;
+}
+
+#header {
+    width: 100%;
+}
+
+#tweets {
+    overflow: hidden;
+}
+
+canvas {
+    margin: auto;
+    max-width: 500px;
+}
