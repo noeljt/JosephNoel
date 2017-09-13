@@ -3469,6 +3469,10 @@ body.is-touch #banner {
 			font-size: 13pt;
 		}
 
+		.spotlight.left .content, .spotlight.right .content {
+			padding: 4.5em 2.5em;
+			width: 30rem;
+		}
 }
 
 /* Large */
