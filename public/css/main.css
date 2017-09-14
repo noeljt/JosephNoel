@@ -3461,7 +3461,7 @@ body.is-touch #banner {
 
 /* XLarge */
 
-@media screen and (max-width: 1680px) {
+@media screen and (min-width: 1280px) {
 
 	/* Basic */
 
