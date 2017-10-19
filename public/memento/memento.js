@@ -55,7 +55,7 @@ $("#input").bind('input propertychange', function() {
 // Create memento from originator and save to caretaker
 $("#save").click(function() {
     caretaker.add(originator.saveStateToMemento());
-    var html = "<input type='button' value='Version " + caretaker.size() + "'>";
+    var html = "<input class='two columns offset-by-one' type='button' value='Version " + caretaker.size() + "'>";
     $("#history").append(html);
 });
 
