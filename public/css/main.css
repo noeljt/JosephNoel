@@ -4024,6 +4024,6 @@ i::before {
 	margin-bottom: 24px;
 }
 
-#contactEmail {
-	color: white;
+#contactEmail, #contactEmail:hover {
+	color: rgba(255, 255, 255, 0.75);
 }
