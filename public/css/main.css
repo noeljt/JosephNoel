@@ -3367,7 +3367,6 @@ body.landing #header {
 		max-width: 95%;
 		padding: 6em;
 		position: relative;
-		text-align: right;
 		vertical-align: middle;
 		z-index: 1;
 	}
@@ -3516,6 +3515,14 @@ body.is-touch #banner {
 
 		#banner .content {
 			padding: 4.5em;
+		}
+
+		#banner .content .image {
+			margin-left: 0;
+		}
+
+		#banner .content header {
+			margin: 0 0 2em 0;
 		}
 
 	/* Footer */
