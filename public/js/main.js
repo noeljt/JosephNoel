@@ -20,13 +20,13 @@
 			$body = $('body');
 
 		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
+			// $body.addClass('is-loading');
 
-			$window.on('load', function() {
-				window.setTimeout(function() {
-					$body.removeClass('is-loading');
-				}, 0);
-			});
+			// $window.on('load', function() {
+			// 	window.setTimeout(function() {
+			// 		$body.removeClass('is-loading');
+			// 	}, 0);
+			// });
 
 		// Touch mode.
 			if (skel.vars.mobile)
@@ -44,9 +44,9 @@
 			});
 
 		// Scrolly links.
-			$('.scrolly').scrolly({
-				speed: 2000
-			});
+			// $('.scrolly').scrolly({
+			// 	speed: 2000
+			// });
 
 		// Dropdowns.
 			$('#nav > ul').dropotron({
@@ -203,19 +203,19 @@
 									}
 
 								// Add scrollex.
-									$this.scrollex({
-										mode:		mode,
-										top:		top,
-										bottom:		bottom,
-										initialize:	function(t) { $this.addClass('inactive'); },
-										terminate:	function(t) { $this.removeClass('inactive'); },
-										enter:		function(t) { $this.removeClass('inactive'); },
+									// $this.scrollex({
+									// 	mode:		mode,
+									// 	top:		top,
+									// 	bottom:		bottom,
+									// 	initialize:	function(t) { $this.addClass('inactive'); },
+									// 	terminate:	function(t) { $this.removeClass('inactive'); },
+									// 	enter:		function(t) { $this.removeClass('inactive'); },
 
-										// Uncomment the line below to "rewind" when this spotlight scrolls out of view.
+									// 	// Uncomment the line below to "rewind" when this spotlight scrolls out of view.
 
-										//leave:	function(t) { $this.addClass('inactive'); },
+									// 	//leave:	function(t) { $this.addClass('inactive'); },
 
-									});
+									// });
 
 							}
 
