@@ -4,8 +4,6 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-console.log(skel.vars);
-
 (function($) {
 
 	skel.breakpoints({
@@ -21,15 +19,6 @@ console.log(skel.vars);
 		var	$window = $(window),
 			$body = $('body');
 
-		// Disable animations/transitions until the page has loaded.
-			// $body.addClass('is-loading');
-
-			// $window.on('load', function() {
-			// 	window.setTimeout(function() {
-			// 		$body.removeClass('is-loading');
-			// 	}, 0);
-			// });
-
 		// Touch mode.
 			if (skel.vars.mobile)
 				$body.addClass('is-touch');
@@ -44,11 +33,6 @@ console.log(skel.vars);
 					skel.breakpoint('medium').active
 				);
 			});
-
-		// Scrolly links.
-			// $('.scrolly').scrolly({
-			// 	speed: 2000
-			// });
 
 		// Dropdowns.
 			$('#nav > ul').dropotron({
@@ -203,21 +187,6 @@ console.log(skel.vars);
 										bottom = 0;
 
 									}
-
-								// Add scrollex.
-									// $this.scrollex({
-									// 	mode:		mode,
-									// 	top:		top,
-									// 	bottom:		bottom,
-									// 	initialize:	function(t) { $this.addClass('inactive'); },
-									// 	terminate:	function(t) { $this.removeClass('inactive'); },
-									// 	enter:		function(t) { $this.removeClass('inactive'); },
-
-									// 	// Uncomment the line below to "rewind" when this spotlight scrolls out of view.
-
-									// 	//leave:	function(t) { $this.addClass('inactive'); },
-
-									// });
 
 							}
 

@@ -4034,3 +4034,7 @@ i::before {
 #contactEmail, #contactEmail:hover {
 	color: rgba(255, 255, 255, 0.75);
 }
+
+#phone > p > a {
+	color: rgba(255, 255, 255, 0.75);
+}
